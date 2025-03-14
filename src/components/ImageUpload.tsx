@@ -63,7 +63,7 @@ export default class ImageUpload extends Component<{}, ImageUploadState> {
 
 
 
-    axios.post("http://127.0.0.1:5000/dashboard/images", data,
+    axios.post("https://aizen-backend.onrender.com/dashboard/images", data,
       {
         headers: {
           "Content-Type": "multipart/form-data",

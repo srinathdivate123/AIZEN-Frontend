@@ -27,7 +27,7 @@ export default class Images extends Component<{}, ImagesState> {
         const accessToken = useStore.getState().accessToken;
         console.log(accessToken);
 
-        axios.get("http://127.0.0.1:5000/dashboard/images",
+        axios.get("https://aizen-backend.onrender.com/dashboard/images",
             {
                 headers: {
                     Authorization: `Bearer ${accessToken}`,
