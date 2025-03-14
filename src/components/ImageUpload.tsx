@@ -3,7 +3,18 @@ import axios from "axios";
 import { useStore } from "@/store/store";
 import { toast } from "@/hooks/use-toast";
 
-export default class ImageUpload extends Component {
+
+interface ImageUploadState {
+  image: File[];
+  responseMsg: {
+    status: string;
+    message: string;
+    error: string;
+  };
+
+};
+
+export default class ImageUpload extends Component<{}, ImageUploadState> {
   
   constructor(props: {}) {
     super(props);
@@ -74,16 +85,22 @@ export default class ImageUpload extends Component {
             responseMsg: {
               status: response.data.status,
               message: response.data.message,
+              error: "",
             },
           });
           setTimeout(() => {
             this.setState({
               image: [],
-              responseMsg: "",
+              responseMsg: {
+                status: "",
+                message: "",
+                error: "",
+              },
             });
           }, 100000);
 
-          document.querySelector("#imageForm")?.reset();
+          (document.querySelector("#imageForm") as HTMLFormElement)?.reset();
+
           // getting uploaded images
         }
         
@@ -109,6 +126,8 @@ export default class ImageUpload extends Component {
     ) {
       this.setState({
         responseMsg: {
+          status: "",
+          message: "",
           error: "",
         },
       });
@@ -116,7 +135,9 @@ export default class ImageUpload extends Component {
     } else {
       this.setState({
         responseMsg: {
-          error: "File type allowed only jpg, png, jpeg",
+          status: "",
+          message: "",
+          error: "File type not allowed",
         },
       });
       return false;
