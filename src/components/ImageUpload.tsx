@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import Images from "./Image";
 import { useStore } from "@/store/store";
-import { useNavigate } from "react-router-dom";
 import { toast } from "@/hooks/use-toast";
 
 export default class ImageUpload extends Component {
@@ -87,7 +85,6 @@ export default class ImageUpload extends Component {
 
           document.querySelector("#imageForm")?.reset();
           // getting uploaded images
-          this.refs.child.getImages();
         }
         
       })
