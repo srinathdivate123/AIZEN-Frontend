@@ -1,9 +1,16 @@
-import React, { Component } from "react";
+import { Component } from "react";
 import axios from "axios";
 import { useStore } from "@/store/store";
 
-export default class Images extends Component {
-    constructor(props) {
+
+interface ImagesState {
+    title: string[]; // Array of image URLs
+}
+
+
+
+export default class Images extends Component<{}, ImagesState> {
+    constructor(props: {}) {
         super(props);
 
         this.state = {
@@ -57,7 +64,7 @@ export default class Images extends Component {
                                     {
                                         this.state.title.length > 0 ? (
                                             this.state.title.map((image) => (
-                                                <div className="col-lg-3" key={image.id}>
+                                                <div className="col-lg-3" key={image}>
                                                     <img src={image} className="img-fluid img-bordered" width="400px" style={{ padding: "30px" }} 
                                                     />
                                                 </div>

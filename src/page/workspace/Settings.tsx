@@ -4,7 +4,7 @@ import EditWorkspaceForm from "@/components/workspace/edit-workspace-form";
 import DeleteWorkspaceCard from "@/components/workspace/settings/delete-workspace-card";
 import { Permissions } from "@/constant";
 
-const Settings = () => {
+const SettingsWithPermission = () => {
   return (
     <div className="w-full h-auto py-2">
       <WorkspaceHeader />
