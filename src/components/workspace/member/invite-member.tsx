@@ -5,7 +5,6 @@ import { Label } from "@/components/ui/label";
 import { useAuthContext } from "@/context/auth-provider";
 import { toast } from "@/hooks/use-toast";
 import { CheckIcon, CopyIcon, Loader } from "lucide-react";
-import { BASE_ROUTE } from "@/routes/common/routePaths";
 import PermissionsGuard from "@/components/resuable/permission-guard";
 import { Permissions } from "@/constant";
 
@@ -14,7 +13,7 @@ const InviteMember = () => {
   const [copied, setCopied] = useState(false);
 
   const inviteUrl = workspace
-    ? `${window.location.origin}${BASE_ROUTE.INVITE_URL.replace(
+    ? `${window.location.origin}${"".replace(
       ":inviteCode",
       workspace.inviteCode
     )}`
