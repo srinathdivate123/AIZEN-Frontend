@@ -1,4 +1,4 @@
-import ViewImagesComponent from "@/components/VIewImage";
+import ViewImagesComponent from "@/components/ViewImage";
 
 
 const UploadImages = () => {
