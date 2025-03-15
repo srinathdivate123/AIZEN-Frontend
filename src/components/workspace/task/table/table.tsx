@@ -27,7 +27,6 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
-import TableSkeleton from "@/components/skeleton-loaders/table-skeleton";
 import { DataTablePagination } from "./table-pagination";
 
 interface PaginationProps {
@@ -119,7 +118,7 @@ export function DataTable<TData, TValue>({
       </div>
       <div className="rounded-md border">
         {isLoading ? (
-          <TableSkeleton columns={6} rows={10} />
+          false
         ) : (
           <Table>
             <TableHeader>
