@@ -1,4 +1,4 @@
-import ImageUpload from "@/components/ImageUpload";
+import ImageUpload from "@/components/UploadImage";
 
 const WorkspaceDashboard = () => {
 

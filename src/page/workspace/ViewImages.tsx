@@ -1,4 +1,5 @@
-import Images from "@/components/Image";
+import ViewImagesComponent from "@/components/VIewImage";
+
 
 const UploadImages = () => {
 
@@ -9,7 +10,7 @@ const UploadImages = () => {
           <h2 className="text-2xl font-bold tracking-tight">
             View Images
           </h2>
-          <Images/>
+          <ViewImagesComponent/>
         </div>
         
         {/* <Button onClick={onOpen}>

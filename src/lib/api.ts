@@ -31,7 +31,7 @@ export const loginMutationFn = async (
   const response = await API.post("/auth/login", data);
   return response.data;
 };
-  
+
 export const registerMutationFn = async (data: registerType) =>
   await API.post("/auth/register", data);
 
@@ -39,7 +39,7 @@ export const logoutMutationFn = async () => await API.post("/auth/logout");
 
 export const getCurrentUserQueryFn =
   async (): Promise<CurrentUserResponseType> => {
-    const response = await API.get(`/auth/user/current`);
+    const response = await API.get(`/auth/current-user`);
     return response.data;
   };
 
@@ -60,7 +60,7 @@ export const editWorkspaceMutationFn = async ({
   const response = await API.put(`/workspace/update/${workspaceId}`, data);
   return response.data;
 };
- 
+
 export const getAllWorkspacesUserIsMemberQueryFn =
   async (): Promise<AllWorkspaceResponseType> => {
     const response = await API.get(`/workspace/all`);
@@ -70,7 +70,7 @@ export const getAllWorkspacesUserIsMemberQueryFn =
 export const getWorkspaceByIdQueryFn = async (
   workspaceId: string
 ): Promise<WorkspaceByIdResponseType> => {
-  const response = await API.get(`/workspace/${workspaceId}`);  
+  const response = await API.get(`/workspace/${workspaceId}`);
   return response.data;
 };
 
@@ -191,6 +191,21 @@ export const deleteProjectMutationFn = async ({
   );
   return response.data;
 };
+
+
+
+// *********    IMAGES *****************
+export const uploadImageMutationFn = async (data: FormData) => {
+  return API.post("/dashboard/images", data);
+};
+
+
+export const viewImagesMutationFn = async () => {
+  const response = await API.get("/dashboard/images");
+  return response.data.paths;
+};
+
+
 
 //*******TASKS ********************************
 //************************* */

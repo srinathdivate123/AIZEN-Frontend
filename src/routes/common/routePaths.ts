@@ -8,7 +8,7 @@ export const AUTH_ROUTES = {
 };
 
 export const PROTECTED_ROUTES = {
-  WORKSPACE: "/workspace",
+  DASHBOARD: "/dashboard",
   UPLOAD: "/view-images",
   TASKS: "/workspace/:workspaceId/tasks",
   MEMBERS: "/workspace/:workspaceId/members",

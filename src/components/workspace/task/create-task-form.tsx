@@ -143,7 +143,9 @@ export default function CreateTaskForm(props: {
   const priorityOptions = transformOptions(taskPriorityList);
 
   const onSubmit = (values: z.infer<typeof formSchema>) => {
-    if (isPending) return;
+    if (isPending) 
+      return;
+    
     const payload = {
       workspaceId,
       projectId: values.projectId,

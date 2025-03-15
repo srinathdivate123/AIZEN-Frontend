@@ -57,9 +57,9 @@ const Asidebar = () => {
             <SidebarGroupContent>
               <SidebarGroup>
                 <SidebarMenu>
-                <SidebarMenuItem key={"sdg"}>
+                <SidebarMenuItem>
                     <SidebarMenuButton asChild>
-                      <Link to={"workspace"} className="!text-[15px]">
+                      <Link to={"dashboard"} className="!text-[15px]">
                         <span>{"Upload an Image"}</span>
                       </Link>
                     </SidebarMenuButton>
@@ -67,7 +67,7 @@ const Asidebar = () => {
                   <Separator />
 
 
-                  <SidebarMenuItem key={"sdg"}>
+                  <SidebarMenuItem>
                     <SidebarMenuButton asChild>
                       <Link to={"view-images"} className="!text-[15px]">
                         <span>{"View Images"}</span>
