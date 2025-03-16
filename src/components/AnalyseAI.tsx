@@ -1,4 +1,18 @@
-export default function AnalizeAIComponent() {
+import { analyseAIMutationFn } from "@/lib/api";
+import { useQuery } from "@tanstack/react-query";
+
+export default function AnalizeAIComponent({ imagePath }: { imagePath: string }) {
+
+    const fileName = imagePath.split('/').pop() || "";
+
+    useQuery({
+        queryKey: ["filename", fileName],
+        queryFn: () => analyseAIMutationFn({ filename: fileName.trim() }), // Prevent empty values
+        staleTime: 0,
+        enabled: !!fileName?.trim(),
+    });
+
+
     return (
 
         <div className="w-full h-auto max-w-full">

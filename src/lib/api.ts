@@ -48,3 +48,14 @@ export const viewImagesMutationFn = async () => {
   const response = await API.get("/dashboard/images");
   return response.data.paths;
 };
+
+
+export const analyseAIMutationFn = async (data: { filename: string }) => {
+  
+  console.log(true, data);
+  
+  const response = await API.post("/dashboard/analyse-ai", data);
+  return response.data;
+};
+
+

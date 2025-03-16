@@ -44,7 +44,7 @@ export default function ViewImages() {
                                             </Button>
                                         </DialogTrigger>
                                         <DialogContent className="sm:max-w-lg max-h-auto my-5 border-0">
-                                            <AnalizeAIComponent />
+                                            <AnalizeAIComponent imagePath={image_path}/>
                                         </DialogContent>
                                     </Dialog>
                                 </div>
