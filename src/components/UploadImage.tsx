@@ -69,7 +69,6 @@ export default function ImageUpload() {
     };
 
     const fileValidate = (file: File) => {
-        console.log("File Type:", file.type);
         if (["image/png", "image/jpg", "image/jpeg"].includes(file.type)) {            
             return true;
         }

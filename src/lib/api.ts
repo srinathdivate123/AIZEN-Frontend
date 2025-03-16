@@ -17,8 +17,6 @@ export const loginMutationFn = async (
 export const registerMutationFn = async (data: registerType) =>
   await API.post("/auth/register", data);
 
-export const logoutMutationFn = async () => await API.post("/auth/logout");
-
 export const getCurrentUserQueryFn =
   async (): Promise<CurrentUserResponseType> => {
     const response = await API.get(`/auth/current-user`);
