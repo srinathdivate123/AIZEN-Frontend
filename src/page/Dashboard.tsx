@@ -1,6 +1,6 @@
 import ImageUpload from "@/components/UploadImage";
 
-const WorkspaceDashboard = () => {
+const DashboardPage = () => {
 
   return (
     <main className="flex flex-1 flex-col py-4 md:pt-3">
@@ -16,4 +16,4 @@ const WorkspaceDashboard = () => {
   );
 };
 
-export default WorkspaceDashboard;
+export default DashboardPage;

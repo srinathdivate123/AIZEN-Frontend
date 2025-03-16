@@ -1,6 +1,6 @@
 import SignIn from "@/page/auth/Sign-in";
 import SignUp from "@/page/auth/Sign-up";
-import WorkspaceDashboard from "@/page/Dashboard";
+import DashboardPage from "@/page/Dashboard";
 import { AUTH_ROUTES, PROTECTED_ROUTES } from "./routePaths";
 import ViewImagesPage from "@/page/ViewImages";
 
@@ -10,6 +10,6 @@ export const authenticationRoutePaths = [
 ];
 
 export const protectedRoutePaths = [
-  { path: PROTECTED_ROUTES.DASHBOARD, element: <WorkspaceDashboard /> },
+  { path: PROTECTED_ROUTES.DASHBOARD, element: <DashboardPage /> },
   { path: PROTECTED_ROUTES.VIEW_IMAGES, element: <ViewImagesPage /> },
 ];

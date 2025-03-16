@@ -18,7 +18,6 @@ const ViewImagesPage = () => {
           New Project
         </Button> */}
       </div>
-      {/* <WorkspaceAnalytics /> */}
 
 
       {/* <div className="mt-4">
