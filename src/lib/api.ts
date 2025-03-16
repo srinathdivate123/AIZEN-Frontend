@@ -50,11 +50,8 @@ export const viewImagesMutationFn = async () => {
 };
 
 
-export const analyseAIMutationFn = async (data: { filename: string }) => {
-  
-  console.log(true, data);
-  
-  const response = await API.post("/dashboard/analyse-ai", data);
+export const analyseAIMutationFn = async (data: { filename: string }) => {  
+  const response = await API.post("/dashboard/analyse-ai", data);  
   return response.data;
 };
 
