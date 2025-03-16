@@ -1,8 +1,8 @@
 import SignIn from "@/page/auth/Sign-in";
 import SignUp from "@/page/auth/Sign-up";
-import WorkspaceDashboard from "@/page/workspace/Dashboard";
+import WorkspaceDashboard from "@/page/Dashboard";
 import { AUTH_ROUTES, PROTECTED_ROUTES } from "./routePaths";
-import ViewImagesPage from "@/page/workspace/ViewImages";
+import ViewImagesPage from "@/page/ViewImages";
 
 export const authenticationRoutePaths = [
   { path: AUTH_ROUTES.SIGN_IN, element: <SignIn /> },

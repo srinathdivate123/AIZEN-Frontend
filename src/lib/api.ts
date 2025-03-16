@@ -4,7 +4,6 @@ import {
   LoginResponseType,
   loginType,
   registerType,
-  WorkspaceByIdResponseType,
 } from "@/types/api.type";
 
 export const loginMutationFn = async (
@@ -23,19 +22,8 @@ export const getCurrentUserQueryFn =
     return response.data;
   };
 
-//********* WORKSPACE ****************
-//************* */
 
-
-export const getWorkspaceByIdQueryFn = async (
-  workspaceId: string
-): Promise<WorkspaceByIdResponseType> => {
-  const response = await API.get(`/workspace/${workspaceId}`);
-  return response.data;
-};
-
-
-
+  
 // *********    IMAGES *****************
 export const uploadImageMutationFn = async (data: FormData) => {
   return API.post("/dashboard/images", data);
@@ -52,5 +40,3 @@ export const analyseAIMutationFn = async (data: { filename: string }) => {
   const response = await API.post("/dashboard/analyse-ai", data);  
   return response.data;
 };
-
-

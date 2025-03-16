@@ -10,8 +10,4 @@ export const AUTH_ROUTES = {
 export const PROTECTED_ROUTES = {
   DASHBOARD: "/dashboard",
   VIEW_IMAGES: "/view-images",
-  TASKS: "/workspace/:workspaceId/tasks",
-  MEMBERS: "/workspace/:workspaceId/members",
-  SETTINGS: "/workspace/:workspaceId/settings",
-  PROJECT_DETAILS: "/workspace/:workspaceId/project/:projectId",
 };

@@ -21,8 +21,8 @@ const LogoutDialog = (props: {
 
   const handleLogoutNew = () => {
     toast({
-      title: "Success",
-      description: "You have been logged out",
+      title: "Logout successful",
+      description: "Redirecting to login page",
       variant: "success",
     });
     clearAccessToken();

@@ -25,14 +25,12 @@ import {
 import Logo from "@/components/logo";
 import LogoutDialog from "./logout-dialog";
 import { Separator } from "../ui/separator";
-import useWorkspaceId from "@/hooks/use-workspace-id";
 import { useAuthContext } from "@/context/auth-provider";
 
 const Asidebar = () => {
   const { isLoading, user } = useAuthContext();
 
   const { open } = useSidebar();
-  const workspaceId = useWorkspaceId();
 
   const [isOpen, setIsOpen] = useState(false);
   
@@ -44,10 +42,10 @@ const Asidebar = () => {
       <Sidebar collapsible="icon">
         <SidebarHeader className="!py-0 dark:bg-background">
           <div className="flex h-[50px] items-center justify-start w-full px-1">
-            <Logo url={`/workspace/${workspaceId}`} />
+            <Logo url={`/dashboard`} />
             {open && (
               <Link
-                to={`/workspace/${workspaceId}`}
+                to={`/dashboard`}
                 className="hidden md:flex ml-2 items-center gap-2 self-center font-medium"
               >
                 ImageX

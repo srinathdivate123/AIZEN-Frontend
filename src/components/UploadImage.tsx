@@ -7,6 +7,7 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Loader } from "lucide-react";
 import { uploadImageMutationFn } from "@/lib/api";
+import { useRef } from "react";
 
 export default function ImageUpload() {
     const formSchema = z.object({
@@ -29,15 +30,21 @@ export default function ImageUpload() {
 
     type FormValues = z.infer<typeof formSchema>;
 
+    const fileInputRef = useRef<HTMLInputElement>(null);
+
     const { mutate, isPending } = useMutation({
         mutationFn: uploadImageMutationFn,
         onSuccess: () => {
+            reset();
+            if (fileInputRef.current) {
+                fileInputRef.current.value = "";
+            }
+
             toast({
                 title: "Success",
                 description: "Image uploaded successfully",
                 variant: "success",
             });
-            reset();
         },
         onError: (error) => {
             toast({
@@ -89,7 +96,8 @@ export default function ImageUpload() {
                 <Input 
                     type="file" 
                     accept="image/png, image/jpg, image/jpeg" 
-                    onChange={handleFileChange} />
+                    onChange={handleFileChange} 
+                    ref={fileInputRef}/>
                 <Button type="submit" disabled={isPending}>
                     {isPending && <Loader className="animate-spin" />}
                     {isPending ? "Uploading. Please wait..." : "Upload"}
