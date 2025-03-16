@@ -6,16 +6,14 @@ import { Button } from "@/components/ui/button";
 import AnalizeAIComponent from "./AnalyseAI";
 import { Dialog, DialogContent, DialogTrigger } from "./ui/dialog";
 
-const useGetImages = () => {
-    return useQuery({
-        queryKey: ["images"],
-        queryFn: viewImagesMutationFn,
-        staleTime: Infinity,
-    });
-};
 
 export default function ViewImages() {
-    const { data: images = [], isLoading } = useGetImages();
+
+    const { data: images = [], isLoading, isFetching } = useQuery({
+        queryKey: ["images"],
+        queryFn: viewImagesMutationFn,
+        staleTime: 0
+    });
 
     return (
 
@@ -23,7 +21,7 @@ export default function ViewImages() {
         <div className="container pt-4">
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                {isLoading ? (
+                {isLoading || isFetching  ? (
                     <div className="col-span-full flex items-center justify-center space-x-2">
                         <Loader className="animate-spin" />
                         <p>Loading images...</p>
@@ -34,13 +32,10 @@ export default function ViewImages() {
                             <CardContent className="p-4 flex justify-center">
                                 <img
                                     src={image_path}
-                                    alt={`Uploaded ${index}`}
                                     className="rounded-lg w-full h-48 object-cover"
                                 />
                             </CardContent>
                             <CardFooter className="flex justify-center">
-
-
                                 <div>
                                     <Dialog modal={true}>
                                         <DialogTrigger>
@@ -53,10 +48,6 @@ export default function ViewImages() {
                                         </DialogContent>
                                     </Dialog>
                                 </div>
-
-                                {/* <Button variant="outline" onClick={() => onButtonClick(image_path)}>
-                                    Analyse Using AI
-                                </Button> */}
                             </CardFooter>
                         </Card>
                     ))

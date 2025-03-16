@@ -1,7 +1,7 @@
 import ViewImagesComponent from "@/components/ViewImage";
 
 
-const UploadImages = () => {
+const ViewImagesPage = () => {
 
   return (
     <main className="flex flex-1 flex-col py-4 md:pt-3">
@@ -49,4 +49,4 @@ const UploadImages = () => {
   );
 };
 
-export default UploadImages;
+export default ViewImagesPage;

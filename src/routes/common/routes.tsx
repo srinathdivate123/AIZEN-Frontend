@@ -2,7 +2,7 @@ import SignIn from "@/page/auth/Sign-in";
 import SignUp from "@/page/auth/Sign-up";
 import WorkspaceDashboard from "@/page/workspace/Dashboard";
 import { AUTH_ROUTES, PROTECTED_ROUTES } from "./routePaths";
-import UploadImages from "@/page/workspace/ViewImages";
+import ViewImagesPage from "@/page/workspace/ViewImages";
 
 export const authenticationRoutePaths = [
   { path: AUTH_ROUTES.SIGN_IN, element: <SignIn /> },
@@ -11,5 +11,5 @@ export const authenticationRoutePaths = [
 
 export const protectedRoutePaths = [
   { path: PROTECTED_ROUTES.DASHBOARD, element: <WorkspaceDashboard /> },
-  { path: PROTECTED_ROUTES.UPLOAD, element: <UploadImages/> },
+  { path: PROTECTED_ROUTES.VIEW_IMAGES, element: <ViewImagesPage /> },
 ];
